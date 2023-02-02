@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import YouTubeComp from "../../component/YouTubeComp/YouTubeComp";
-import Product from "../Product/Product";
+// import YouTubeComp from "../../component/YouTubeComp/YouTubeComp";
+// import Product from "../Product/Product";
+import LifeCycleComp from "../LifeCycleComp/LifeCycleComp";
+import './Home.css';
 
 class Home extends Component {
   render() {
@@ -30,8 +32,10 @@ class Home extends Component {
             src="https://images.unsplash.com/photo-1675141194800-ae6f2f729ed9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"/>
         <YouTubeComp 
             /> */}
-            <p>Counter</p><hr />
-            <Product/>
+            {/* <p>Counter</p><hr />
+            <Product/> */}
+            <p className="home">LiveCycle Component</p><hr />
+            <LifeCycleComp/>
       </div> 
     );
   }

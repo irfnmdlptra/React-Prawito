@@ -38,7 +38,7 @@ class CardProduct extends Component {
             alt="product-img"
           />
         </div>
-        <p className="product-title">Daging Ayam Berbumbu Rasa Rndang</p>
+        <p className="product-title">Daging Ayam Berbumbu Rempah Rasa Kuda Laut</p>
         <p className="harga-title">Rp 400,000</p>
         <div className="counter">
           <button className="minus" onClick={this.handleMinus}>

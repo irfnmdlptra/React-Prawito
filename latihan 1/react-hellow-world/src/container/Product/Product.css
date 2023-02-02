@@ -56,6 +56,13 @@ body {
     margin: 2rem auto;
 }
 
+ 
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 4px gray;
+  }
+  
+
 .img-thumb-prod > img {
     width: 100%;
 }
@@ -85,9 +92,20 @@ p {
     font-size: 20px;
     border-radius: 4px;
 }
-.card .counter button:active{
+/* .card .counter button:active{
     border: 2px solid #20c954;
-}
+} */
+ 
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 4px gray;
+  }
+  
+  button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 gray;
+  }
+  
 
 .card .counter input {
     height: 40px;
