@@ -1,0 +1,96 @@
+body {
+    text-align: center;
+}
+.header {
+    background: #20c954;
+    display: flex;
+    width: 400px;
+    height: 70px;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    margin: auto;
+    text-align: center;
+}
+.logo {
+    position: relative;
+    text-align: left    ;
+}
+.logo img {
+    width: 30%;
+    margin-top: -20px;
+    text-align: left;
+}
+
+.troley {
+    position: relative;
+}
+
+.troley img {
+    width: 30px;
+}
+
+.count {
+    background: #2d3c82;
+    padding: 10px;
+    border-radius: 50%;
+    min-width: 10px;
+    height: 10px;
+    line-height: 10px;
+    text-align: center;
+    color: aliceblue;font-size: 11px;
+    font-size: 11px;
+    position: absolute;
+    bottom: -8px;
+    left: -13px;
+}
+
+.card {
+
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3), -3px -3px 3px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    width: 320px;
+    border-radius: 4px;
+    margin: 2rem auto;
+}
+
+.img-thumb-prod > img {
+    width: 100%;
+}
+
+p {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2d3c82;
+}
+.harga-title {
+    color: orange;
+}
+
+.card .counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card .counter button {
+    width: 50px;
+    height: 50px;
+    background:#2d3c82 ;
+    border: none;
+    color: aliceblue;
+    font-size: 20px;
+    border-radius: 4px;
+}
+.card .counter button:active{
+    border: 2px solid #20c954;
+}
+
+.card .counter input {
+    height: 40px;
+    text-align: center;
+    border-radius: 4px;
+}
