@@ -5,6 +5,19 @@ import LifeCycleComp from "../LifeCycleComp/LifeCycleComp";
 import './Home.css';
 
 class Home extends Component {
+  state = {
+    showComponent: true
+  }
+
+  componentDidMount() {
+    // setTimeout(() => {
+    //   this.setState({
+    //    showComponent:false
+    //   });
+    // }, 15000);
+ 
+   
+  }
   render() {
     return (
       <div>
@@ -35,7 +48,12 @@ class Home extends Component {
             {/* <p>Counter</p><hr />
             <Product/> */}
             <p className="home">LiveCycle Component</p><hr />
-            <LifeCycleComp/>
+            {
+              this.state.showComponent 
+              ?
+              <LifeCycleComp/>
+              : null
+            }
       </div> 
     );
   }

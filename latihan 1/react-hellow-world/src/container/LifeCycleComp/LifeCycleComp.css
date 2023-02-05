@@ -3,21 +3,39 @@ body {
 }
 .btn {
     padding: 10px 20px;
-    background-color: blue;
+    background: rgb(0, 89, 255);
     color: white;
     border: none;
     border-radius: 5px;
     box-shadow: 2px 2px 2px gray;
-    transition: all 0.3s ease;
   }
   
   .btn:hover {
     transform: translateY(-2px);
     box-shadow: 4px 4px 4px gray;
+    background-image: linear-gradient(to right, blue, red);
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    animation: gradient 5s ease  infinite;
   }
   
   .btn:active {
     transform: translateY(2px);
     box-shadow: 0 0 0 gray;
   }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+   
+  
   
