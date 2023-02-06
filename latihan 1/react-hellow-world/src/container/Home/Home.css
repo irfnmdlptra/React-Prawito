@@ -1,3 +1,30 @@
-p.home{
-    text-align: center;
+body {
+}
+.nav {
+  width: 100%;
+  padding-top: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background: rgb(255, 255, 255);
+}
+.marquee {
+    font-size: 20px;font-weight: bold;  
+    padding-bottom: 0px;
+    display: flex;
+    height: 30px;
+    align-items: center;
+    padding-left: 100%;;
+    animation:alternate-reverse marquee 15s linear infinite ;
+}
+.marquee img {
+    height: 100px;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
