@@ -51,7 +51,7 @@ class Home extends Component {
               this.state.showComponent 
               ?
               <LifeCycleComp/>
-              : nullZ
+              : null
             } */}
         <div className="nav">
           <p className="marquee">Blog Post <img src="https://imgs.search.brave.com/fFjDS1zntO1BwTTes0B_C2lY43m1bJSHKt3gQE7q7lI/rs:fit:480:320:1/g:ce/aHR0cHM6Ly9iZXN0/YW5pbWF0aW9ucy5j/b20vQW5pbWFscy9N/YW1tYWxzL0NhdHMv/Y2F0cy9jdXRlLWtp/dHR5LWFuaW1hdGVk/LWdpZi02NC5naWY.gif" alt=""  /></p> <hr />

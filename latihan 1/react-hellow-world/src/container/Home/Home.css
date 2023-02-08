@@ -3,9 +3,10 @@
   width: 100%;
   padding-top: 2px;
   overflow: hidden;
+  color: aliceblue;
   white-space: nowrap;
   box-sizing: border-box;
-  background: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
 }
 .marquee {
     font-size: 20px;font-weight: bold;  
@@ -14,7 +15,7 @@
     height: 30px;
     align-items: center;
     padding-left: 100%;;
-    animation:alternate-reverse marquee 15s linear infinite ;
+    animation:alternate marquee 15s linear infinite ;
 }
 .marquee img {
     height: 100px;
