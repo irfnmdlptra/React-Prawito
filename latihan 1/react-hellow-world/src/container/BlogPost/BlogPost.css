@@ -61,8 +61,8 @@ body {
 }
 
 .img-thumb img {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   object-fit: cover;
 }
 
@@ -71,7 +71,7 @@ body {
   height: 100%;
   scrollbar-width: thin;
   scrollbar-color: darkgray lightgray;
-  /* overflow-y: auto; */
+  overflow-y: auto;
 }
 
 .title {
@@ -109,9 +109,9 @@ body {
 }
 
 .form-add-post {
-  position: fixed;
+  /* position: fixed; */
   width: 500px;
-  z-index: 99;
+  /* z-index: 99; */
   left: 25%;
   top: 6%;
   margin: 20px auto;

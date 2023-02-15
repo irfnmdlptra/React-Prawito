@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import BlogPost from "../BlogPost/BlogPost";
-// import YouTubeComp from "../../component/YouTubeComp/YouTubeComp";
-// import Product from "../Product/Product";
-// import LifeCycleComp from "../LifeCycleComp/LifeCycleComp";
+import YouTubeComp from "../../component/YouTubeComp/YouTubeComp";
+import Product from "../Product/Product";
+import LifeCycleComp from "../LifeCycleComp/LifeCycleComp";
 import "./Home.css";
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 class Home extends Component {
   state = {
@@ -19,7 +20,8 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
+      // <BrowserRouter>
+         <div>
         {/* <p>YouTube Component</p>
         <hr />
         <YouTubeComp 
@@ -42,17 +44,16 @@ class Home extends Component {
             title="Kota"
             desc="2m ditonton. 10 hari yang lalu"
             src="https://images.unsplash.com/photo-1675141194800-ae6f2f729ed9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"/>
-        <YouTubeComp 
-            /> */}
-        {/* <p>Counter</p><hr />
-            <Product/> */}
-        {/* <p className="home">LiveCycle Component</p><hr />
+        <YouTubeComp  /> 
+       <p>Counter</p><hr />
+            <Product/> 
+         <p className="home">LiveCycle Component</p><hr />
             {
               this.state.showComponent 
               ?
               <LifeCycleComp/>
               : null
-            } */}
+            }  */}
         <div className="nav">
           <p className="marquee">Blog Post <img src="https://imgs.search.brave.com/fFjDS1zntO1BwTTes0B_C2lY43m1bJSHKt3gQE7q7lI/rs:fit:480:320:1/g:ce/aHR0cHM6Ly9iZXN0/YW5pbWF0aW9ucy5j/b20vQW5pbWFscy9N/YW1tYWxzL0NhdHMv/Y2F0cy9jdXRlLWtp/dHR5LWFuaW1hdGVk/LWdpZi02NC5naWY.gif" alt=""  /></p> <hr />
         </div>
@@ -61,4 +62,5 @@ class Home extends Component {
     );
   }
 }
+
 export default Home;

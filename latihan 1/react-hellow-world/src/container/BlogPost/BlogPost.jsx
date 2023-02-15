@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import Post from "../../component/Post/Post";
 import "./BlogPost.css";
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 class BlogPost extends Component {
   state = {
@@ -13,6 +13,7 @@ class BlogPost extends Component {
       userId: 1,
     },
     showForm: false,
+    isUpdate: false,
   };
 
   getPostAPI = () => {
@@ -22,6 +23,7 @@ class BlogPost extends Component {
       });
     });
   };
+
   postDataToAPI = () => {
     axios.post("http://localhost:3004/posts", this.state.formBlogPost).then(
       (res) => {
@@ -33,16 +35,33 @@ class BlogPost extends Component {
       }
     );
   };
+
+  putDataToAPI = () => {
+    axios
+      .put(`http://localhost:3004/posts/${this.state.formBlogPost.id}`, this.state.formBlogPost)
+      .then(
+        (res) => {
+          console.log(res);
+          this.getPostAPI();
+        },
+        (err) => {
+          console.log("error: ", err);
+        }
+      );
+  };
+
   handleRemove = (data) => {
-    console.log(data);
-    axios.delete(`http://localhost:3004/posts/${data}`, this.state.formBlogPost).then((res) => {
+    axios.delete(`http://localhost:3004/posts/${data}`).then((res) => {
       this.getPostAPI();
     });
   };
+
   handleUpdate = (data) => {
+    console.log(data);
     this.setState({
       formBlogPost: data,
       showForm: true,
+      isUpdate: true,
     });
   };
 
@@ -51,20 +70,28 @@ class BlogPost extends Component {
     let timestamp = new Date().getTime();
     formBlogPostNew["id"] = timestamp;
     formBlogPostNew[event.target.name] = event.target.value;
-    this.setState(
-      {
-        formBlogPost: formBlogPostNew,
-      },
-      () => {
-        console.log("value obj formBlogPost", this.state.formBlogPost);
-      }
-    );
+    this.setState({
+      formBlogPost: formBlogPostNew,
+    });
   };
+
   handleSubmit = () => {
-    this.postDataToAPI();
-    this.getPostAPI();
-    this.setState({ showForm: false });
+    if (this.state.isUpdate) {
+      this.putDataToAPI();
+    } else {
+      this.postDataToAPI();
+    }
+    this.setState({
+      isUpdate: false,
+      formBlogPost: {
+        id: 1,
+        title: "",
+        body: "",
+        userId: 1,
+      },
+    });
   };
+
   componentDidMount() {
     this.getPostAPI();
   }
@@ -72,14 +99,12 @@ class BlogPost extends Component {
   toggleForm = () => {
     this.setState({ showForm: !this.state.showForm });
   };
-
   render() {
     return (
       <Fragment>
         <button type="submit section-title" className="btn-tambah" onClick={this.toggleForm}>
           Buat Blog
         </button>
-        {this.state.showForm ? (
           <div className="form-add-post">
             <label htmlFor="title">Title</label>
             <input type="text" name="title" placeholder="tambah title" value={this.state.formBlogPost.title} onChange={this.handleFormChange} />
@@ -89,7 +114,6 @@ class BlogPost extends Component {
               Simpan
             </button>
           </div>
-        ) : null}
         <div className="container">
           {this.state.post.map((post) => {
             return <Post key={post.id} data={post} remove={this.handleRemove} update={this.handleUpdate} />;

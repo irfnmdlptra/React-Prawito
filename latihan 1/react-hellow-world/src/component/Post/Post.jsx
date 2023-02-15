@@ -1,8 +1,7 @@
 import React from "react";
 
 const Post = (props) => {
-  return (
-    <div className="post">
+  return (<div className="post">
       <div className="img-thumb">
         <img src="https://source.unsplash.com/200x150?tech" alt="dummy" />
       </div>
@@ -17,7 +16,7 @@ const Post = (props) => {
         </button>
       </div>
     </div>
-  );
+  )
 };
 
 export default Post;
